@@ -1,7 +1,7 @@
 export const DynamicIslandSizePresets = {
   default: {
-    width: 150,
-    aspectRatio: 44 / 150,
+    width: 120,
+    aspectRatio: 35 / 120,
     borderRadius: 22,
   },
   minimalLeading: {
@@ -35,4 +35,4 @@ export const DynamicIslandSizePresets = {
     aspectRatio: 210 / 371,
     borderRadius: 42,
   },
-}
+};
