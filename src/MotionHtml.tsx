@@ -1,24 +1,22 @@
-import { motion } from 'framer-motion'
-import React from 'react'
-import { DynamicIslandSize } from '../types'
-import { useWillChange } from 'framer-motion'
+import { HTMLMotionProps, motion } from 'framer-motion';
+import { useWillChange } from 'framer-motion';
+import React from 'react';
 
-type Props = {
-  id?: string
-  className?: string
-  before: DynamicIslandSize
-  size: DynamicIslandSize
-  children?: React.ReactNode
-}
+import { DynamicIslandSize } from '../types';
 
-const stiffness = 400
-const damping = 30
+type Props = HTMLMotionProps<'div'> & {
+  before: DynamicIslandSize;
+  size: DynamicIslandSize;
+};
+
+const stiffness = 400;
+const damping = 30;
 
 const MotionDiv = (props: Props) => {
-  const willChange = useWillChange()
+  const willChange = useWillChange();
   return (
     <motion.div
-      id={props.id}
+      {...props}
       initial={{
         opacity: props.size === props.before ? 1 : 0,
         scale: props.size === props.before ? 1 : 0.9,
@@ -30,15 +28,14 @@ const MotionDiv = (props: Props) => {
       }}
       exit={{ opacity: 0, filter: 'blur(10px)', scale: 0 }}
       style={{ willChange }}
-      className={props.className}
     >
       {props.children}
     </motion.div>
-  )
-}
+  );
+};
 
 const MotionH2 = (props: Props) => {
-  const willChange = useWillChange()
+  const willChange = useWillChange();
   return (
     <motion.h2
       className={props.className}
@@ -52,11 +49,11 @@ const MotionH2 = (props: Props) => {
     >
       {props.children}
     </motion.h2>
-  )
-}
+  );
+};
 
 const MotionP = (props: Props) => {
-  const willChange = useWillChange()
+  const willChange = useWillChange();
   return (
     <motion.p
       className={props.className}
@@ -70,7 +67,7 @@ const MotionP = (props: Props) => {
     >
       {props.children}
     </motion.p>
-  )
-}
+  );
+};
 
-export { MotionDiv, MotionH2, MotionP }
+export { MotionDiv, MotionH2, MotionP };
