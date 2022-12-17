@@ -193,7 +193,7 @@ export const DynamicIslandMusicPlayer = ({
                   size={size}
                   before="compact"
                 >
-                  Sunghyun was listening to&hellip;
+                  Junho was listening to&hellip;
                 </MotionP>
                 <MotionH2
                   className="my-0 font-sans text-white truncate text-md whitespace-nowrap"
@@ -272,9 +272,7 @@ export const DynamicIslandMusicPlayer = ({
             >
               <Back
                 className="m-auto"
-                onClick={(
-                  e: React.MouseEvent<SVGSVGElement, MouseEvent>,
-                ) => {
+                onClick={(e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
                   decrement();
                   e.preventDefault();
                   e.stopPropagation();
@@ -296,9 +294,7 @@ export const DynamicIslandMusicPlayer = ({
             >
               <Forward
                 className="m-auto"
-                onClick={(
-                  e: React.MouseEvent<SVGSVGElement, MouseEvent>,
-                ) => {
+                onClick={(e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
                   increment();
                   e.preventDefault();
                   e.stopPropagation();
