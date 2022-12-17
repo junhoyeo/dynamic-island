@@ -1,5 +1,4 @@
-import Image from 'next/image';
-
+/* eslint-disable @next/next/no-img-element */
 import PhoneDownFill from '../public/phone_down_fill.svg';
 import PhoneFill from '../public/phone_fill.svg';
 import { DynamicIslandSize } from '../types';
@@ -17,10 +16,16 @@ export const DynamicIslandPhoneCall = ({
         size={size}
         before="default"
       >
-        <Image
+        <img
           src={'https://github.com/junhoyeo.png'}
           alt={"Junho Yeo's GitHub Profile Picture"}
-          layout="fill"
+          style={{
+            position: 'absolute',
+            height: '100%',
+            width: '100%',
+            top: 0,
+            left: 0,
+          }}
         />
       </MotionDiv>
       <MotionDiv
