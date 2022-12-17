@@ -9,7 +9,7 @@ const initialState: keyof typeof DynamicIslandSizePresets = 'default';
 
 const maxWidth = 371;
 
-type Props = {
+export type DynamicIslandProps = {
   state: DynamicIslandSize;
   setState: (state: DynamicIslandSize) => void;
   default: DynamicIslandSize;
@@ -22,7 +22,7 @@ type Props = {
 
 const min = (a: number, b: number) => (a < b ? a : b);
 
-const DynamicIsland = (props: Props) => {
+const DynamicIsland = (props: DynamicIslandProps) => {
   const willChange = useWillChange();
   const { state, children, id } = props;
   return (
@@ -31,9 +31,18 @@ const DynamicIsland = (props: Props) => {
         id={id}
         className="items-center justify-center w-0 h-0 mx-auto text-center text-white transition duration-300 ease-in-out bg-black hover:shadow-lg"
         animate={{
-          width: min(DynamicIslandSizePresets[state ?? initialState].width, maxWidth),
-          height: DynamicIslandSizePresets[state ?? initialState].aspectRatio * min(DynamicIslandSizePresets[state ?? initialState].width, maxWidth),
-          borderRadius: DynamicIslandSizePresets[state ?? initialState].borderRadius,
+          width: min(
+            DynamicIslandSizePresets[state ?? initialState].width,
+            maxWidth,
+          ),
+          height:
+            DynamicIslandSizePresets[state ?? initialState].aspectRatio *
+            min(
+              DynamicIslandSizePresets[state ?? initialState].width,
+              maxWidth,
+            ),
+          borderRadius:
+            DynamicIslandSizePresets[state ?? initialState].borderRadius,
           transition: { type: 'spring', stiffness: 400, damping: 25 },
           clipPath: `none`,
           transitionEnd: {
