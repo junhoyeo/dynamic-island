@@ -60,7 +60,6 @@ export const DynamicIslandPhoneCall = ({
         >
           <PhoneDownFill
             className="align-middle m-auto text-white scale-[2]"
-            layout="fill"
           />
         </MotionDiv>
       </MotionDiv>
@@ -78,7 +77,7 @@ export const DynamicIslandPhoneCall = ({
           size={size}
           before="default"
         >
-          <PhoneFill className="m-auto text-white scale-[2]" layout="fill" />
+          <PhoneFill className="m-auto text-white scale-[2]" />
         </MotionDiv>
       </MotionDiv>
     </MotionDiv>

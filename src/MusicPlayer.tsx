@@ -273,7 +273,7 @@ export const DynamicIslandMusicPlayer = ({
               <Back
                 className="m-auto"
                 onClick={(
-                  e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                  e: React.MouseEvent<SVGSVGElement, MouseEvent>,
                 ) => {
                   decrement();
                   e.preventDefault();
@@ -297,7 +297,7 @@ export const DynamicIslandMusicPlayer = ({
               <Forward
                 className="m-auto"
                 onClick={(
-                  e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                  e: React.MouseEvent<SVGSVGElement, MouseEvent>,
                 ) => {
                   increment();
                   e.preventDefault();
