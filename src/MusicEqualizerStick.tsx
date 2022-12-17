@@ -1,23 +1,23 @@
-import { motion } from 'framer-motion'
-import React from 'react'
+import { motion } from 'framer-motion';
+import React from 'react';
 
 const getRandomInt = (max: number) => {
-  return Math.floor(Math.random() * Math.floor(max))
-}
+  return Math.floor(Math.random() * Math.floor(max));
+};
 
 const getLoopingRandomInt = (max: number, length: number, base: number) => {
-  const randomInts: number[] = []
+  const randomInts: number[] = [];
   for (let i = 0; i < length - 1; i++) {
-    randomInts.push((getRandomInt(max) - max) / 2 + (base / 100) * max)
+    randomInts.push((getRandomInt(max) - max) / 2 + (base / 100) * max);
   }
-  randomInts.push(randomInts[0])
-  return randomInts
-}
+  randomInts.push(randomInts[0]);
+  return randomInts;
+};
 
 type Props = {
-  baseLength?: number // as a percentage of the height of the parent
-  colors: string[]
-}
+  baseLength?: number; // as a percentage of the height of the parent
+  colors: string[];
+};
 
 const MusicEqualizerStick = ({ baseLength, colors }: Props) => {
   return (
@@ -37,7 +37,7 @@ const MusicEqualizerStick = ({ baseLength, colors }: Props) => {
         repeat: Infinity,
       }}
     />
-  )
-}
+  );
+};
 
-export default MusicEqualizerStick
+export default MusicEqualizerStick;
