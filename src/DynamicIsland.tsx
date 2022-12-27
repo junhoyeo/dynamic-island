@@ -29,6 +29,7 @@ const DynamicIsland = (props: DynamicIslandProps) => {
     <div className="z-10 grid justify-center w-full h-full bg-transparent place-items-center">
       <motion.button
         id={id}
+        initial={false}
         className="items-center justify-center w-0 h-0 mx-auto text-center text-white transition duration-300 ease-in-out bg-black hover:shadow-lg"
         animate={{
           width: min(
