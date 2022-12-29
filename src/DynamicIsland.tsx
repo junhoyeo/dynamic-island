@@ -1,9 +1,11 @@
 // See https://developer.apple.com/design/human-interface-guidelines/components/system-experiences/live-activities
+
 import { AnimatePresence, motion } from 'framer-motion';
 import { useWillChange } from 'framer-motion';
 
 import { DynamicIslandSize } from '../types';
 import { DynamicIslandSizePresets } from './DynamicIslandSizePresets';
+import { damping, stiffness } from './physics';
 
 const initialState: keyof typeof DynamicIslandSizePresets = 'default';
 
@@ -44,7 +46,11 @@ const DynamicIsland = (props: DynamicIslandProps) => {
             ),
           borderRadius:
             DynamicIslandSizePresets[state ?? initialState].borderRadius,
-          transition: { type: 'spring', stiffness: 400, damping: 25 },
+          transition: {
+            type: 'spring',
+            stiffness: stiffness,
+            damping: damping,
+          },
           clipPath: `none`,
           transitionEnd: {
             clipPath: `url(#squircle-${state ?? initialState})`,

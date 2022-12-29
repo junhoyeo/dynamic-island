@@ -3,14 +3,12 @@ import { useWillChange } from 'framer-motion';
 import React from 'react';
 
 import { DynamicIslandSize } from '../types';
+import { damping, stiffness } from './physics';
 
 type Props = HTMLMotionProps<'div'> & {
   before: DynamicIslandSize;
   size: DynamicIslandSize;
 };
-
-const stiffness = 400;
-const damping = 30;
 
 const MotionDiv = (props: Props) => {
   const willChange = useWillChange();

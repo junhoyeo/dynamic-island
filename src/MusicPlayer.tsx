@@ -96,9 +96,9 @@ export const DynamicIslandMusicPlayer = ({
                 as="image"
               />
               <link
-                key={imageUrl}
+                key={`${imageUrl}-2`}
                 rel="preload"
-                href={encodeURIComponent(imageUrl)}
+                href={imageUrl}
                 as="image"
               />
             </>
@@ -162,7 +162,7 @@ export const DynamicIslandMusicPlayer = ({
               before="compact"
             >
               <MotionDiv
-                className="relative w-16 h-16 col-span-1 my-auto ml-6 overflow-hidden rounded-2xl"
+                className="relative w-16 h-16 col-span-1 my-auto ml-6 overflow-hidden shadow-lg rounded-2xl shadow-gray-900"
                 size={size}
                 before="compact"
               >
