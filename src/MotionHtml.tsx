@@ -25,7 +25,10 @@ const MotionDiv = (props: Props) => {
         transition: { type: 'spring', stiffness: stiffness, damping: damping },
       }}
       exit={{ opacity: 0, filter: 'blur(10px)', scale: 0 }}
-      style={{ willChange }}
+      style={{
+        willChange,
+        pointerEvents: props.size === props.before ? undefined : 'none',
+      }}
     >
       {props.children}
     </motion.div>
