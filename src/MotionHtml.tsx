@@ -18,17 +18,21 @@ const MotionDiv = (props: Props) => {
       initial={{
         opacity: props.size === props.before ? 1 : 0,
         scale: props.size === props.before ? 1 : 0.9,
+        pointerEvents: props.size === props.before ? 'auto' : 'none',
       }}
       animate={{
         opacity: props.size === props.before ? 0 : 1,
         scale: props.size === props.before ? 0.9 : 1,
+        pointerEvents: props.size === props.before ? 'none' : 'auto',
         transition: { type: 'spring', stiffness: stiffness, damping: damping },
       }}
-      exit={{ opacity: 0, filter: 'blur(10px)', scale: 0 }}
-      style={{
-        willChange,
-        pointerEvents: props.size === props.before ? undefined : 'none',
+      exit={{
+        opacity: 0,
+        filter: 'blur(10px)',
+        scale: 0,
+        pointerEvents: 'none',
       }}
+      style={{ willChange }}
     >
       {props.children}
     </motion.div>
